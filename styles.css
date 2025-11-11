@@ -1,0 +1,330 @@
+/* Main Styling */
+	body {
+		font-family: 'Poppins', sans-serif;
+		overflow-x: hidden;
+	}
+
+/* Header Text Styling */
+	h1, h2, h3 {
+		font-weight: normal;
+	}
+	
+	h2 {
+		font-size: 30px;
+	}
+	
+		/* Subtitle Styling */
+			#subtitle {
+				color: #6B7280;
+			}
+
+/* Navigation Styling */
+	nav {
+		padding: 15px;
+		border-bottom: 1px solid #E5E7EB;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		position: relative;
+		z-index: 1;
+	}
+
+	/* List Style */
+		nav ul, #footer-nav {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* List Item Style */
+			nav li, #footer li {
+				display: inline;
+			}
+
+			/* Link Style */
+				nav a {
+					text-decoration: none;
+					color: black;
+					padding: 15px;
+				}
+				
+				nav a:hover {
+					background-color: #E5E7EB;
+					cursor: pointer;
+				}
+
+/* Request Button Styling */
+	.request-btn {
+		background: linear-gradient(135deg, #ebc572, #8b7b58);
+		border-color: #8b7b58;
+		color: white;
+		border-radius: 15px;
+		padding: 15px;
+		width: 200px;
+		font-size: 20px;
+	}
+	
+	.request-btn:hover {
+		background: linear-gradient(135deg, #8b7b58, #ebc572);
+		cursor: pointer;
+	}
+	
+	.career-sign-up {
+		background: linear-gradient(135deg, #ebc572, #8b7b58);
+		border-color: #8b7b58;
+		color: white;
+		border-radius: 5px;
+		padding: 5px;
+		width: 100px;
+		margin-left: 100px;
+	}
+	
+	.career-sign-up:hover {
+		background: linear-gradient(135deg, #8b7b58, #ebc572);
+		cursor: pointer;
+	}
+	
+		/* Request Button in Navigation Styling */
+		#nav-invite {
+			padding: 10px;
+			font-size: 15px;
+		}
+		
+		#footer-invite {
+			text-decoration: none;
+			color: white;
+		}
+	
+	/* Center Request Button in First Section  */
+		.quarter-section .request-btn {
+			margin-left: 25%;
+		}
+	
+/* Page Sectioning Styling */
+	.section {
+		padding: 80px;
+		border-bottom: 1px dotted black;
+		height: 400px;
+	}
+	
+	/* Divide Sectioning into a Vertical Quarter */
+		.quarter-section {
+			width: 25%;
+		}
+		
+			.right-quarter-section {
+				width: 25%;
+				float: right;
+			}
+
+/* Page Sections Styling */
+	#one {
+		overflow: hidden;
+		font-size: 20px;
+	}
+	
+	#two {
+		background-color: #F3F4F6;
+	}
+	
+	
+		#one, #three {
+			background-color: white;
+		}
+	
+/* Colour Blob Styling */
+	#blob {
+		width: 900px;
+		margin-top: -160%;
+		margin-left: -90%;
+	}
+	
+	@keyframes blob {
+  from {width: 1000px;}
+  to {
+		width: 600px;
+		rotate: -60deg;
+		}
+	}
+	
+	#blob:hover {
+		animation-name: blob;
+		animation-duration: 4s;
+		cursor: zoom-in;
+	}
+	
+
+
+/* Card Styling */
+	/* Card Container */
+	.card-container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		padding: 40px 0;
+	}
+	
+		.card {
+			width: 20%;
+			background-color: white;
+			margin: 40px;
+			margin-top: 0;
+			padding: 10px;
+			height: 250px;
+			border-radius: 15px;
+			box-shadow: 0px 0px 10px #e3e4e6;
+			transition: transform 0.3s ease, width 0.3s ease, z-index 0s;
+			position: relative;
+			z-index: 1;
+		}
+
+		.card:hover {
+			transform: scale(1.15);
+			z-index: 1;
+		}
+		
+			.card-img {
+				width: 20%;
+				height: 25%;
+				border-radius: 50%;
+				margin-left: 40%;
+				overflow: hidden;
+			}
+
+	
+/* Responsive styles for devices under 600px */
+@media screen and (max-width: 600px) {
+  /* General styles */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fix white space issue */
+  * {
+    max-width: 100%;
+  }
+
+  /* Section styling */
+  .section {
+    padding: 40px 15px;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Navigation adjustments - keep items inline */
+	nav {
+		padding-bottom: 0;
+	}
+	
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  nav li {
+    margin: 5px;
+    display: inline-block;
+  }
+  
+  nav li a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  /* Position the invite button */
+  nav li[style="float: right;"] {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  #nav-invite {
+    display: none;
+  }
+
+  /* Hero section */
+  #one {
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 16px;
+  }
+
+  .quarter-section, .right-quarter-section {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .quarter-section h1 {
+    font-size: 24px;
+  }
+
+  /* Center the button */
+  .quarter-section .request-btn {
+    margin-left: 0;
+    width: 80%;
+    max-width: 200px;
+  }
+
+  /* Background blob adjustment */
+  #blob {
+    width: 200%;
+    margin-top: -20%;
+    margin-left: -25%;
+		margin-right: -25%;
+  }
+
+  /* Features section */
+  #two h2, #two > p {
+    text-align: center;
+  }
+
+  /* Card container */
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin: 10px 0;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card-img {
+    margin-left: 0;
+  }
+
+  /* Articles section */
+  #three {
+    height: auto;
+    text-align: center;
+  }
+
+  .article {
+    width: 90%;
+    float: none;
+    margin: 20px auto;
+    height: auto;
+    max-width: 350px;
+  }
+
+  .article-img {
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+  }
+}
