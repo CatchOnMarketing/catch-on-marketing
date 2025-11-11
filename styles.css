@@ -27,6 +27,28 @@
 		z-index: 1;
 	}
 
+/* Mobile nav toggle (checkbox hack) */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none; /* hidden on desktop, shown on mobile */
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+}
+
+.nav-toggle-label .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #111827;
+  margin: 5px 0;
+}
+
 	/* List Style */
 		nav ul, #footer-nav {
 			list-style-type: none;
@@ -166,12 +188,11 @@
 		.card {
 			width: 20%;
 			background-color: white;
-			margin: 40px;
-			margin-top: 0;
-			padding: 10px;
+            margin: 0 40px 40px;
+            padding: 10px;
 			height: 250px;
 			border-radius: 15px;
-			box-shadow: 0px 0px 10px #e3e4e6;
+			box-shadow: 0 0 10px #e3e4e6;
 			transition: transform 0.3s ease, width 0.3s ease, z-index 0s;
 			position: relative;
 			z-index: 1;
@@ -215,38 +236,47 @@
     box-sizing: border-box;
   }
 
-  /* Navigation adjustments - keep items inline */
+  /* Navigation adjustments - collapsible menu */
 	nav {
-		padding-bottom: 0;
+		padding-bottom: 10px;
 	}
-	
+
+  /* Show hamburger */
+  .nav-toggle-label {
+    display: inline-block;
+  }
+
+  /* Hide menu by default on mobile */
   nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0 0 0;
+  }
+
+  /* Show when toggled */
+  .nav-toggle:checked ~ ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
   }
 
   nav li {
-    margin: 5px;
-    display: inline-block;
+    display: block;
+    margin: 0;
   }
   
   nav li a {
-    padding: 8px 10px;
-    font-size: 14px;
+    display: block;
+    padding: 12px 8px;
+    font-size: 16px;
   }
 
-  /* Position the invite button */
+  /* Invite button takes normal flow */
   nav li[style="float: right;"] {
-    margin-top: 10px;
-    display: block;
-    width: 100%;
-    text-align: center;
+    float: none !important;
   }
-  
+
   #nav-invite {
-    display: none;
+    display: inline-block;
   }
 
   /* Hero section */
@@ -273,12 +303,9 @@
     max-width: 200px;
   }
 
-  /* Background blob adjustment */
+  /* Hide the hook graphic (blob) on mobile */
   #blob {
-    width: 200%;
-    margin-top: -20%;
-    margin-left: -25%;
-		margin-right: -25%;
+    display: none;
   }
 
   /* Features section */

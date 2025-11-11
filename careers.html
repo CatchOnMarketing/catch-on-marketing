@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/1.png">
   
   <title>Catch-On Marketing</title>
 
@@ -14,7 +14,13 @@
 <body>
 
 	<nav>
-		<ul>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle" />
+		<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</label>
+		<ul id="primary-navigation">
 			<li><a href="index.html" id="nav-home">Home</a></li>
 			<li><a href="about.html" id="nav-about">About</a></li>
 			<li><a href="careers.html" id="nav-careers">Careers</a></li>
@@ -34,7 +40,7 @@
 		</div>
 		
 		<div class="right-quarter-section">
-			<img id="blob" src="./images/5.png"></img>
+			<img alt="blob" id="blob" src="./images/5.png">
 		</div>
 	
 	</div>
@@ -42,8 +48,9 @@
 	<div class="section" id="two">
 
 		<h2>Careers at Catch-On</h2>
-			<p>Catch-On Marketing is an independent provider as we have an efficient framework behind each service,
-			however we offer commission-based roles to support ourselves and our clients.</p>
+			<p style="width: 80%">Catch-On Marketing is an independent provider as we have an efficient framework behind each service,
+			however we offer commission-based roles to support ourselves and our clients. Please note that currently all roles require you to be
+			a catch-on lead generator.</p>
 		
 		<div class="card-container">
 			<div class="card">
@@ -63,34 +70,31 @@
 					<li>Generate leads for the client</li>
 					<li style="color: red">40% commission per sale</li>
 				</ul>
-				<p>🚫 Become a Catch-On Lead Generator first!</p>
+				<button class="career-sign-up">Sign Up</button>
 			</div>
 			
 			<div class="card">
-				<img class="card-img" src="./images/website.png"></img>
 				<h3>Website Developer</h3>
 				<ul>
 					<li>Create landing pages & portfolio sites</li>
 					<li>Host on GitHub Pages via repository</li>
 					<li style="color: red;">+20% commission on client</li>
 				</ul>
-				<p>🚫 Become a Catch-On Lead Generator first!</p>
+				<button class="career-sign-up">Sign Up</button>
 			</div>
 			
 			<div class="card">
-				<img class="card-img" src="./images/1.png"></img>
 				<h3>Job Scouter</h3>
 				<ul>
 					<li>Create professional portfolios for clients</li>
 					<li>Find 10 potential jobs for the client</li>
 					<li style="color: red;">+10% commission</li>
 				</ul>
+				<button class="career-sign-up">Sign Up</button>
 			</div>
 		</div>
 
 	</div>
 	
-	</div>
 </body>
-<script src="./script.js"></script>
 </html>
