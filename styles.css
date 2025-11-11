@@ -327,9 +327,9 @@
 
   .card {
     width: 90%;
-    margin: 10px 0;
+    margin: 0 0 10px;
     height: auto;
-    padding: 20px;
+    padding: -10px 20px 20px;
     text-align: center;
   }
 
@@ -338,7 +338,13 @@
   }
 
   .card-img {
-    margin-left: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  .career-sign-up {
+      margin-left: 0;
   }
 
   /* Articles section */
@@ -359,5 +365,9 @@
     height: auto;
     max-height: 180px;
     object-fit: cover;
+  }
+
+  .card-list {
+      text-align: left;
   }
 }
