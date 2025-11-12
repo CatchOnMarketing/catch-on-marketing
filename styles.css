@@ -2,6 +2,7 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     background-color: #121212;
+    margin: 0;
 }
 
 h1, h2, h3 {
@@ -89,7 +90,7 @@ nav a:hover {
     border: 1px solid #ebc572;
 }
 
-.request-btn {
+.request-btn, .career-sign-up {
     background: linear-gradient(135deg, #ebc572, #8b7b58);
     border-color: #8b7b58;
     color: white;
@@ -99,28 +100,13 @@ nav a:hover {
     font-size: 20px;
 }
 
-.request-btn:hover {
+.request-btn:hover, .career-sign-up:hover {
     background: linear-gradient(135deg, #8b7b58, #ebc572);
     cursor: pointer;
 }
 
-.career-sign-up {
-    background: linear-gradient(135deg, #ebc572, #8b7b58);
-    border-color: #8b7b58;
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100px;
-    margin-left: 100px;
-}
-
-.career-sign-up:hover {
-    background: linear-gradient(135deg, #8b7b58, #ebc572);
-    cursor: pointer;
-}
 
 #nav-invite {
-    padding: 10px;
     font-size: 15px;
 }
 
@@ -129,7 +115,7 @@ nav a:hover {
     color: white;
 }
 
-.quarter-section .request-btn {
+.quarter-section .request-btn, .quarter-section .career-sign-up {
     text-decoration: none;
     color: white;
 }
@@ -484,7 +470,7 @@ nav a:hover {
     }
 
     /* Center the button */
-    .quarter-section .request-btn {
+    .quarter-section .request-btn, .quarter-section .career-sign-up {
         margin-left: 0;
         width: 80%;
         max-width: 200px;
@@ -529,9 +515,6 @@ nav a:hover {
         width: 100% !important;
     }
 
-    .career-sign-up {
-        margin-left: 0;
-    }
 
     /* Make packages stack nicely and take full width on mobile */
     .card-container .package {
@@ -595,6 +578,17 @@ nav a:hover {
         padding: 0 !important;
     }
 
+}
+
+@media screen and (min-width: 601px) {
+    nav {
+        position: sticky;
+        padding-top: 30px;
+        top: 0;
+        z-index: 100;
+        background-color: #121212;
+        backdrop-filter: saturate(120%) blur(2px);
+    }
 }
 
 .quotes-ticker .quote-author {
