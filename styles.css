@@ -238,6 +238,22 @@ nav a:hover {
     z-index: 1;
 }
 
+/* Gold card header used at the top of each card */
+.card-header {
+    background: linear-gradient(135deg, #ebc572, #8b7b58);
+    color: #ffffff;
+    width: auto; /* fill the card, accounting for padding via negative margins */
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 12px 12px 0 0;
+    margin: -10px -10px 12px; /* pull to card edges (card has 10px padding) */
+}
+
+.card h3 {
+    margin-top: 0; /* keep tight under header */
+}
+
 .card:hover {
     transform: scale(1.15);
     z-index: 1;

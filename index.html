@@ -35,15 +35,16 @@
 
 <div class="section" id="one" style="--hero-bg: url('./images/instagram.jpg'); --hero-overlay: 0.55;">
 
-    <div class="quarter-section">
-        <h1 id="h1-ticker" style="line-height: 0;">Catch-on</h1>
-	    <h1>to digital marketing</h1>
+	<div class="quarter-section">
+		<h1 id="h1-ticker" style="line-height: 0;">Catch-on</h1>
+		<h1>to digital marketing</h1>
 
 		<p id="subtitle">Take your social media presence to the next level! Whether you're just starting your personal
 			brand, or looking to advance to the next level,
 			catch-on are here to help with services from consulting and design to website creation</p>
 
-		<button class="request-btn"><a id="footer-invite" href="https://www.instagram.com/catch.on.hooks/#">Scale Today</a></button>
+		<button class="request-btn"><a id="footer-invite" href="https://www.instagram.com/catch.on.hooks/#">Scale
+			Today</a></button>
 		<button class="request-btn"><a id="footer-invite 2" href="about.html">Learn More</a></button>
 	</div>
 
@@ -60,36 +61,42 @@
 
 	<div class="card-container">
 		<div class="card">
-			<img alt="card-1" class="card-img" src="./images/essentials.png">
-			<h3>Stage 1: Essentials <b style="color: red">(FREE)</b></h3>
-			<ul class="card-list">
-				<li>Custom logo design</li>
-				<li>Content advice</li>
-				<li>Instagram presence</li>
-			</ul>
+			<a href="about.html" style="text-decoration: none; color: inherit;">
+				<div class="card-header">Free Offer</div>
+				<h3>Stage 1: Essentials <b style="color: red">(FREE)</b></h3>
+				<ul class="card-list">
+					<li>Custom logo design</li>
+					<li>Content advice</li>
+					<li>Instagram presence</li>
+				</ul>
+			</a>
 		</div>
 
 		<div class="card">
-			<img alt="card-2" class="card-img" src="./images/hook-suite.png">
-			<h3>Stage 2: Hook-Suite</h3>
-			<ul class="card-list">
-				<li>Includes Essentials package</li>
-				<li>Content package</li>
-				<li>Minimum 2500 post views</li>
-			</ul>
+			<a href="about.html" style="text-decoration: none; color: inherit;">
+				<div class="card-header">Low Price Offer</div>
+				<h3>Stage 2: Hook-Suite</h3>
+				<ul class="card-list">
+					<li>Includes Essentials package</li>
+					<li>Content package</li>
+					<li>Minimum 2500 post views</li>
+				</ul>
+			</a>
 		</div>
 
 		<div class="card">
-			<img alt="card-3" class="card-img" src="./images/website.png">
-			<h3>Website Development</h3>
-			<ul class="card-list">
-				<li>Free idea discussion & advice</li>
-				<li>Website development</li>
-				<li>One-time payment when hosted on GitHub</li>
-			</ul>
+			<a href="about.html" style="text-decoration: none; color: inherit;">
+				<div class="card-header">One-Time Payment Offer</div>
+				<h3>Website Development</h3>
+				<ul class="card-list">
+					<li>Free idea discussion & advice</li>
+					<li>Website development</li>
+					<li>One-time payment when hosted on GitHub</li>
+				</ul>
+			</a>
 		</div>
 
- </div>
+	</div>
 
 </div>
 
@@ -100,56 +107,57 @@
 
 <!-- Welcome Modal (shown on home page) -->
 <div id="welcome-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="welcome-modal-title">
-    <div class="modal-backdrop" data-close="true"></div>
-    <div class="modal-content" role="document">
-        <button class="modal-close" aria-label="Close dialog">&times;</button>
-        <h2 id="welcome-modal-title">We're here to talk!</h2>
-        <p>Thanks for showing interest! We'd love to talk to you personally to tailor our services to you. Message us on Instagram and let's talk!</p>
-        <a href="https://www.instagram.com/catch.on.hooks/#" class="request-btn" id="welcome-modal-cta">Get in Touch</a>
-    </div>
-    
+	<div class="modal-backdrop" data-close="true"></div>
+	<div class="modal-content" role="document">
+		<button class="modal-close" aria-label="Close dialog">&times;</button>
+		<h2 id="welcome-modal-title">We're here to talk!</h2>
+		<p>Thanks for showing interest! We'd love to talk to you personally to tailor our services to you. Message us on
+			Instagram and let's talk!</p>
+		<a href="https://www.instagram.com/catch.on.hooks/#" class="request-btn" id="welcome-modal-cta">Get in Touch</a>
+	</div>
+
 </div>
 
 <script src="./script.js"></script>
 <script>
-    (function initWelcomeModal(){
-        const modal = document.getElementById('welcome-modal');
-        if (!modal) return;
-        const closeBtn = modal.querySelector('.modal-close');
-        const backdrop = modal.querySelector('.modal-backdrop');
+	(function initWelcomeModal() {
+		const modal = document.getElementById('welcome-modal');
+		if (!modal) return;
+		const closeBtn = modal.querySelector('.modal-close');
+		const backdrop = modal.querySelector('.modal-backdrop');
 
-        function openModal(){
-            modal.classList.add('open');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('modal-open');
-            if (closeBtn) closeBtn.focus();
-        }
+		function openModal() {
+			modal.classList.add('open');
+			modal.setAttribute('aria-hidden', 'false');
+			document.body.classList.add('modal-open');
+			if (closeBtn) closeBtn.focus();
+		}
 
-        function closeModal(){
-            modal.classList.remove('open');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('modal-open');
-        }
+		function closeModal() {
+			modal.classList.remove('open');
+			modal.setAttribute('aria-hidden', 'true');
+			document.body.classList.remove('modal-open');
+		}
 
-        // Open on page load
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', openModal);
-        } else {
-            openModal();
-        }
+		// Open on page load
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', openModal);
+		} else {
+			openModal();
+		}
 
-        if (closeBtn) closeBtn.addEventListener('click', closeModal);
-        if (backdrop) backdrop.addEventListener('click', (e) => {
-            if (e.target === backdrop || e.target.getAttribute('data-close') === 'true') {
-                closeModal();
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('open')) {
-                closeModal();
-            }
-        });
-    })();
+		if (closeBtn) closeBtn.addEventListener('click', closeModal);
+		if (backdrop) backdrop.addEventListener('click', (e) => {
+			if (e.target === backdrop || e.target.getAttribute('data-close') === 'true') {
+				closeModal();
+			}
+		});
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && modal.classList.contains('open')) {
+				closeModal();
+			}
+		});
+	})();
 </script>
 </body>
 </html>
