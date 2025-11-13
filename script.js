@@ -21,13 +21,45 @@ const TICKER_DATA = {
 	tickerEl.style.borderRadius = '10px';
 	tickerEl.style.padding = '1em';
 
+	// Build indicators (dashes) below the ticker
+	const indicatorsWrap = document.createElement('div');
+	indicatorsWrap.className = 'quotes-indicators';
+	indicatorsWrap.setAttribute('role', 'tablist');
+
+	const indicators = items.map((item, i) => {
+		const span = document.createElement('span');
+		span.className = 'quote-indicator';
+		span.textContent = '—';
+		span.setAttribute('role', 'tab');
+		span.setAttribute('aria-label', `Testimonial ${i + 1}${item.author ? `, ${item.author}` : ''}`);
+		span.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+		indicatorsWrap.appendChild(span);
+		return span;
+	});
+
+	// Insert indicators after the ticker element
+	tickerEl.insertAdjacentElement('afterend', indicatorsWrap);
+
 	let index = 0;
 
 	function render() {
-		const {quote, author} = items[index % items.length];
+		const current = index % items.length;
+		const {quote, author} = items[current];
 		tickerEl.innerHTML = author
 			? `“${quote}”<span class="quote-author">${author}</span>`
 			: `“${quote}”`;
+
+		// Update indicators highlighting
+		indicators.forEach((el, i) => {
+			if (i === current) {
+				el.classList.add('active');
+				el.setAttribute('aria-selected', 'true');
+			} else {
+				el.classList.remove('active');
+				el.setAttribute('aria-selected', 'false');
+			}
+		});
+
 		index++;
 	}
 
@@ -86,6 +118,87 @@ const TICKER_DATA = {
 
 	// Initialize
 	update();
+})();
+
+// Lightbox for package slides (image expand + text details)
+(function initPackageLightbox() {
+    const slider = document.querySelector('.packages-slider');
+    if (!slider) return;
+
+    // Build modal once and reuse
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `
+        <div class="modal-backdrop" data-close="true"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-label="Package preview">
+            <button class="modal-close" aria-label="Close preview" title="Close">×</button>
+            <div class="modal-body"></div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    const bodyEl = document.body;
+    const content = modal.querySelector('.modal-body');
+    const closeBtn = modal.querySelector('.modal-close');
+    const backdrop = modal.querySelector('.modal-backdrop');
+    let lastFocused = null;
+
+    function openModal(inner) {
+        lastFocused = document.activeElement;
+        content.innerHTML = '';
+        if (inner) content.appendChild(inner);
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        bodyEl.classList.add('modal-open');
+        closeBtn.focus();
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        bodyEl.classList.remove('modal-open');
+        // return focus
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+            lastFocused.focus();
+        }
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop || e.target.getAttribute('data-close') === 'true') {
+            closeModal();
+        }
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            closeModal();
+        }
+    });
+
+    // Delegate clicks from slides
+    slider.addEventListener('click', (e) => {
+        const slide = e.target.closest('.slides > .package');
+        if (!slide) return;
+
+        // If slide contains an image, show it larger
+        const img = slide.querySelector('img');
+        if (img) {
+            const big = document.createElement('img');
+            big.src = img.currentSrc || img.src;
+            big.alt = img.alt || 'Package image';
+            big.className = 'modal-img';
+            openModal(big);
+            return;
+        }
+
+        // Otherwise, render the text package content similarly
+        const clone = slide.cloneNode(true);
+        // Remove layout-related classes/attributes that don't matter in modal
+        clone.id = '';
+        clone.className = 'package-text-modal';
+        openModal(clone);
+    });
 })();
 
 // Sign Up modal with embedded Google Form
