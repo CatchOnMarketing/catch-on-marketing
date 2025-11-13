@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{platform, widget}" />
+    <file url="PROJECT" libraries="{019a7c8dc71e731ea4ec0a61f2a3c63a8a50, platform, widget}" />
   </component>
 </project>
