@@ -25,10 +25,9 @@ const TICKER_DATA = {
 
 	function render() {
 		const {quote, author} = items[index % items.length];
-		const html = author
+		tickerEl.innerHTML = author
 			? `“${quote}”<span class="quote-author">${author}</span>`
 			: `“${quote}”`;
-		tickerEl.innerHTML = html;
 		index++;
 	}
 
