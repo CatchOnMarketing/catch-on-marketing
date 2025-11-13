@@ -206,6 +206,10 @@ nav a:hover {
     color: white;
 }
 
+#highlights {
+    background-color: white !important;
+}
+
 #two {
     background-color: #282828;
 }
@@ -659,6 +663,27 @@ nav a:hover {
 
 .quotes-ticker {
     background-color: white;
+}
+
+/* Testimonial ticker indicators (dashes) */
+.quotes-indicators {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    align-items: center;
+}
+
+.quote-indicator {
+    font-size: 22px;
+    line-height: 1;
+    color: #b6b6b6; /* muted by default */
+    transition: color 0.25s ease, transform 0.25s ease;
+    user-select: none;
+}
+
+.quote-indicator.active {
+    color: #ebc572; /* brand gold highlight */
+    transform: translateY(-1px);
 }
 
 body.modal-open {

@@ -21,13 +21,45 @@ const TICKER_DATA = {
 	tickerEl.style.borderRadius = '10px';
 	tickerEl.style.padding = '1em';
 
+	// Build indicators (dashes) below the ticker
+	const indicatorsWrap = document.createElement('div');
+	indicatorsWrap.className = 'quotes-indicators';
+	indicatorsWrap.setAttribute('role', 'tablist');
+
+	const indicators = items.map((item, i) => {
+		const span = document.createElement('span');
+		span.className = 'quote-indicator';
+		span.textContent = '—';
+		span.setAttribute('role', 'tab');
+		span.setAttribute('aria-label', `Testimonial ${i + 1}${item.author ? `, ${item.author}` : ''}`);
+		span.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+		indicatorsWrap.appendChild(span);
+		return span;
+	});
+
+	// Insert indicators after the ticker element
+	tickerEl.insertAdjacentElement('afterend', indicatorsWrap);
+
 	let index = 0;
 
 	function render() {
-		const {quote, author} = items[index % items.length];
+		const current = index % items.length;
+		const {quote, author} = items[current];
 		tickerEl.innerHTML = author
 			? `“${quote}”<span class="quote-author">${author}</span>`
 			: `“${quote}”`;
+
+		// Update indicators highlighting
+		indicators.forEach((el, i) => {
+			if (i === current) {
+				el.classList.add('active');
+				el.setAttribute('aria-selected', 'true');
+			} else {
+				el.classList.remove('active');
+				el.setAttribute('aria-selected', 'false');
+			}
+		});
+
 		index++;
 	}
 
