@@ -22,8 +22,8 @@ h2 {
 .glow-gold {
     color: #ebc572 !important; /* brand gold */
     text-shadow: 0 0 6px rgba(235, 197, 114, 0.9),
-                 0 0 12px rgba(235, 197, 114, 0.6),
-                 0 0 20px rgba(235, 197, 114, 0.35);
+    0 0 12px rgba(235, 197, 114, 0.6),
+    0 0 20px rgba(235, 197, 114, 0.35);
 }
 
 #one #subtitle {
@@ -119,7 +119,7 @@ nav a:hover {
     border-radius: 8px;
     min-width: 180px;
     padding: 6px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 .submenu li {
@@ -140,6 +140,7 @@ nav a:hover {
     .has-submenu {
         display: block;
     }
+
     .submenu {
         position: static;
         border: none;
@@ -341,7 +342,7 @@ nav a:hover {
     padding: 10px;
     height: 250px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.45);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
     border: 1px solid #2a2a2a;
     transition: transform 0.3s ease, width 0.3s ease, z-index 0s;
     position: relative;
@@ -364,7 +365,7 @@ nav a:hover {
     padding: 16px;
     height: auto;
     border: 1px solid #e5e7eb; /* light border */
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 #services-overview .card h3,
@@ -424,7 +425,7 @@ nav a:hover {
     padding: 16px;
     height: auto;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 #ownership-options .card h3,
@@ -442,7 +443,7 @@ nav a:hover {
 .code-interface-card {
     background-color: #1e1e1e !important;
     border: 1px solid #3e3e3e !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
     max-width: 700px !important;
     width: clamp(300px, 60%, 700px) !important;
     padding: 0 !important;
@@ -452,7 +453,7 @@ nav a:hover {
 
 .code-interface-card:hover {
     transform: translateY(-6px) !important;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.4) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
 }
 
 .code-header {
@@ -600,7 +601,7 @@ nav a:hover {
     padding: 16px;
     height: auto;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 #inclusions-cards .card h3,
@@ -627,7 +628,7 @@ nav a:hover {
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     width: 240px;
     height: 240px;
     display: flex;
@@ -638,7 +639,7 @@ nav a:hover {
 
 .demo-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .demo-card .card-header {
@@ -731,7 +732,7 @@ nav a:hover {
     .integration-demos {
         gap: 16px;
     }
-    
+
     .demo-card {
         width: 200px;
         height: 200px;
@@ -752,7 +753,7 @@ nav a:hover {
     padding: 16px;
     height: auto;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 #pricing-cards .card h3,
@@ -792,7 +793,7 @@ nav a:hover {
 .price-item:hover {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .price-badge {
@@ -904,6 +905,7 @@ nav a:hover {
         gap: 12px;
         padding: 8px 10px;
     }
+
     .section-tabs .tab-link {
         padding: 8px 12px;
         font-size: 0.95rem;
@@ -924,7 +926,7 @@ nav a:hover {
     color: #111111;
     padding: 32px;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     max-width: 800px;
     margin: 0 auto;
 }
@@ -1033,19 +1035,19 @@ nav a:hover {
     .process-flow-card {
         padding: 20px;
     }
-    
+
     .process-flow-list li {
         padding: 16px 16px 16px 60px;
         font-size: 0.95rem;
     }
-    
+
     .process-flow-list li::before {
         width: 36px;
         height: 36px;
         font-size: 16px;
         left: -28px;
     }
-    
+
     .process-flow-list::before {
         left: 18px;
     }
@@ -1706,7 +1708,7 @@ body.modal-open {
     height: auto;
     width: auto;
     border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .package-text-modal {

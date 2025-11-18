@@ -435,4 +435,33 @@ const TICKER_DATA = {
 	showSection(currentIndex);
 })();
 
+// Submenu toggle functionality for Services dropdown
+(function initSubmenuToggle() {
+	const submenuToggle = document.querySelector('.submenu-toggle');
+	const hasSubmenuParent = document.querySelector('.has-submenu');
+	
+	if (!submenuToggle || !hasSubmenuParent) return;
+	
+	submenuToggle.addEventListener('click', (e) => {
+		e.preventDefault();
+		const isExpanded = submenuToggle.getAttribute('aria-expanded') === 'true';
+		
+		if (isExpanded) {
+			submenuToggle.setAttribute('aria-expanded', 'false');
+			hasSubmenuParent.classList.remove('open');
+		} else {
+			submenuToggle.setAttribute('aria-expanded', 'true');
+			hasSubmenuParent.classList.add('open');
+		}
+	});
+	
+	// Close submenu when clicking outside
+	document.addEventListener('click', (e) => {
+		if (!e.target.closest('.has-submenu')) {
+			submenuToggle.setAttribute('aria-expanded', 'false');
+			hasSubmenuParent.classList.remove('open');
+		}
+	});
+})();
+
 
