@@ -537,6 +537,139 @@ nav a:hover {
     overflow: hidden;
 }
 
+/* Process Flow Diagram Styling */
+.process-flow-card {
+    background-color: #ffffff;
+    color: #111111;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-flow-card:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.process-flow-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* Vertical connecting line */
+.process-flow-list::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    bottom: 30px;
+    width: 3px;
+    background: linear-gradient(to bottom, #ebc572, #8b7b58);
+    border-radius: 2px;
+}
+
+.process-flow-list li {
+    position: relative;
+    padding: 20px 20px 20px 70px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 8px;
+    border-left: 4px solid #ebc572;
+    transition: all 0.3s ease;
+}
+
+.process-flow-list li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(235, 197, 114, 0.3);
+    border-left-width: 6px;
+}
+
+/* Step number circles */
+.process-flow-list li::before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #ebc572, #d4a84f);
+    color: #111111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 3px 8px rgba(235, 197, 114, 0.4);
+    z-index: 2;
+    border: 3px solid #ffffff;
+}
+
+/* Arrow indicator */
+.process-flow-list li::after {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #8b7b58;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.process-flow-list li:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(4px);
+}
+
+/* Last item styling */
+.process-flow-list li:last-child {
+    background: linear-gradient(135deg, #ebc572 0%, #d4a84f 100%);
+    color: #111111;
+    font-weight: 500;
+    border-left-color: #8b7b58;
+}
+
+.process-flow-list li:last-child::after {
+    content: '✓';
+    color: #111111;
+    font-weight: bold;
+}
+
+/* Initialize counter */
+.process-flow-list {
+    counter-reset: step;
+}
+
+@media (max-width: 640px) {
+    .process-flow-card {
+        padding: 20px;
+    }
+    
+    .process-flow-list li {
+        padding: 16px 16px 16px 60px;
+        font-size: 0.95rem;
+    }
+    
+    .process-flow-list li::before {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        left: -28px;
+    }
+    
+    .process-flow-list::before {
+        left: 18px;
+    }
+}
+
 .card-container .package {
     flex: 1 1 240px;
     max-width: 300px;
