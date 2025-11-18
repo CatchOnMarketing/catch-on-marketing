@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
     background-color: #121212;
     margin: 0;
+    color: #E5E7EB; /* default light text on dark backgrounds */
 }
 
 h1, h2, h3 {
@@ -88,6 +89,66 @@ nav a:hover {
 .nav-active {
     background-color: #282828;
     border: 1px solid #ebc572;
+}
+
+/* Services dropdown (collapsible) */
+.has-submenu {
+    position: relative;
+}
+
+.has-submenu > .submenu-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 15px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.has-submenu > .submenu-toggle:hover {
+    background-color: #282828;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a1a1a;
+    border: 1px solid #ebc572;
+    border-radius: 8px;
+    min-width: 180px;
+    padding: 6px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.submenu li {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 14px;
+}
+
+.has-submenu.open > .submenu {
+    display: block;
+}
+
+/* Mobile adjustments for dropdown inside the revealed menu */
+@media screen and (max-width: 600px) {
+    .has-submenu {
+        display: block;
+    }
+    .submenu {
+        position: static;
+        border: none;
+        border-left: 2px solid #ebc572;
+        border-radius: 0;
+        box-shadow: none;
+        margin-left: 8px;
+        background: transparent;
+    }
 }
 
 .request-btn, .career-sign-up {
@@ -274,15 +335,75 @@ nav a:hover {
 
 .card {
     width: 20%;
-    background-color: white;
+    background-color: #1a1a1a; /* dark card background */
+    color: #E5E7EB; /* light text inside cards */
     margin: 0 40px 40px;
     padding: 10px;
     height: 250px;
     border-radius: 15px;
-    box-shadow: 0 0 10px #e3e4e6;
+    box-shadow: 0 0 10px rgba(0,0,0,0.45);
+    border: 1px solid #2a2a2a;
     transition: transform 0.3s ease, width 0.3s ease, z-index 0s;
     position: relative;
     z-index: 1;
+}
+
+/* Services Overview overrides: make cards larger, white, and dark text */
+#services-overview {
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+#services-overview .card {
+    /* grow the cards and switch to light theme */
+    width: clamp(300px, 42%, 560px);
+    max-width: 560px;
+    min-width: 300px;
+    background-color: #ffffff;
+    color: #111111;
+    padding: 16px;
+    height: auto;
+    border: 1px solid #e5e7eb; /* light border */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#services-overview .card h3,
+#services-overview .card .card-list,
+#services-overview .card .card-list li {
+    color: #111111; /* ensure dark text on white */
+}
+
+#services-overview .card:hover {
+    transform: scale(1.05);
+}
+
+/* Ownership & Hosting Options: larger white cards with dark text */
+#ownership-options {
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+#ownership-options .card {
+    width: clamp(300px, 42%, 560px);
+    max-width: 560px;
+    min-width: 300px;
+    background-color: #ffffff;
+    color: #111111;
+    padding: 16px;
+    height: auto;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#ownership-options .card h3,
+#ownership-options .card p,
+#ownership-options .card .card-list,
+#ownership-options .card .card-list li {
+    color: #111111;
+}
+
+#ownership-options .card:hover {
+    transform: scale(1.05);
 }
 
 /* Gold card header used at the top of each card */
@@ -297,6 +418,63 @@ nav a:hover {
     margin: -10px -10px 12px; /* pull to card edges (card has 10px padding) */
 }
 
+/* Inclusions section: larger white cards */
+#inclusions-cards {
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+#inclusions-cards .card {
+    width: clamp(300px, 42%, 560px);
+    max-width: 560px;
+    min-width: 300px;
+    background-color: #ffffff;
+    color: #111111;
+    padding: 16px;
+    height: auto;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#inclusions-cards .card h3,
+#inclusions-cards .card p,
+#inclusions-cards .card .card-list,
+#inclusions-cards .card .card-list li {
+    color: #111111;
+}
+
+#inclusions-cards .card:hover {
+    transform: scale(1.05);
+}
+
+/* Pricing section: larger white cards */
+#pricing-cards {
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+#pricing-cards .card {
+    width: clamp(300px, 42%, 560px);
+    max-width: 560px;
+    min-width: 300px;
+    background-color: #ffffff;
+    color: #111111;
+    padding: 16px;
+    height: auto;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#pricing-cards .card h3,
+#pricing-cards .card .card-list,
+#pricing-cards .card .card-list li {
+    color: #111111;
+}
+
+#pricing-cards .card:hover {
+    transform: scale(1.05);
+}
+
 .card h3 {
     margin-top: 0; /* keep tight under header */
 }
@@ -304,6 +482,51 @@ nav a:hover {
 .card:hover {
     transform: scale(1.15);
     z-index: 1;
+}
+
+/* Inline section navigation bar (used on tech-services tabs) */
+.section-tabs {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    padding: 10px 14px;
+    margin: 8px 0 16px;
+    background: #555555; /* dark grey bar like the reference */
+    border: 1px solid #1f1f1f;
+    border-radius: 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.section-tabs .tab-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 2px;
+    white-space: nowrap;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.section-tabs .tab-link:hover {
+    background: #6a6a6a;
+}
+
+.section-tabs .tab-link.active {
+    background: #8b7b58; /* muted gold fill */
+    border-color: #ebc572; /* bright gold outline */
+    color: #ffffff;
+}
+
+@media (max-width: 640px) {
+    .section-tabs {
+        gap: 12px;
+        padding: 8px 10px;
+    }
+    .section-tabs .tab-link {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
 }
 
 .card-img {
@@ -423,7 +646,8 @@ nav a:hover {
 }
 
 #two\ about {
-    background-color: #F3F4F6;
+    background-color: #282828; /* keep dark to match site */
+    color: white;
     padding-bottom: 300px;
 }
 

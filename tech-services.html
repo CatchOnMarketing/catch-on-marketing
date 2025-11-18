@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/full-logo.png">
+
+	<title>Catch On Creative Sites and Smart Tech Services</title>
+
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<nav>
+	<input type="checkbox" id="nav-toggle" class="nav-toggle"/>
+	<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation" aria-controls="primary-navigation"
+	       aria-expanded="false">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</label>
+	<ul id="primary-navigation">
+		<li><img alt="logo" style="height: 50px; padding-bottom: 0;" src="./images/full-logo.png"></li>
+		<li><a href="index.html" id="nav-home">Home</a></li>
+		<li><a href="about.html" id="nav-about">About</a></li>
+		<li class="has-submenu" id="nav-services">
+			<button class="submenu-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-submenu">
+				Services <i class="fas fa-arrow-down" style="font-size: 8px;"></i>
+			</button>
+			<ul id="services-submenu" class="submenu" role="menu">
+				<li role="none"><a role="menuitem" href="tech-services.html" id="nav-services-tech" class="nav-active">Tech</a>
+				</li>
+				<li role="none"><a role="menuitem" href="instagram-services.html"
+				                   id="nav-services-instagram">Instagram</a></li>
+			</ul>
+		</li>
+		<li><a href="careers.html" id="nav-careers">Careers</a></li>
+
+		<li style="float: right;">
+			<a href="https://www.instagram.com/catch.on.hooks/#" id="nav-invite" class="request-btn">Scale Today</a>
+		</li>
+	</ul>
+</nav>
+
+<div class="section" id="one" style="--hero-bg: url('./images/tech-services.jpg'); --hero-overlay: 0.55;">
+	<div class="quarter-section">
+		<h1>Catch On Creative Sites and Smart Tech Services</h1>
+		<p id="subtitle">Fast build times, clean design, and practical features shaped around your goals</p>
+		<div class="cta-buttons">
+			<button class="request-btn" style="margin-top: 10px;">
+				<a id="footer-invite" href="https://www.instagram.com/catch.on.hooks/#">Scale Today</a>
+			</button>
+			<a href="index.html" class="home-btn" aria-label="Home" title="Home" id="home-cta"
+			   style="margin-bottom: -10px;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+				     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				     aria-hidden="true" focusable="false">
+					<path d="M3 10.5L12 3l9 7.5"/>
+					<path d="M5 10v10h14V10"/>
+					<path d="M9 20v-6h6v6"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<div class="right-quarter-section"></div>
+
+</div>
+
+<!-- Section Navigation -->
+<div class="section" id="tech-services-sections">
+    <!-- Local section navigation -->
+    <nav class="section-tabs" aria-label="Tech services section navigation">
+        <a id="services-tab" class="tab-link active">Services</a>
+        <a id="inclusions-tab" class="tab-link">Integrations</a>
+        <a id="process-tab" class="tab-link">Process</a>
+        <a id="ownership-tab" class="tab-link">Hosting</a>
+        <a id="pricing-tab" class="tab-link">Pricing</a>
+    </nav>
+</div>
+
+<!-- Services Overview -->
+<div class="section" id="services">
+    <h2>Services Overview</h2>
+ <div class="card-container" id="services-overview">
+        <div class="card">
+            <div class="card-header">Full Website</div>
+            <h3>A complete presence built around your brand</h3>
+            <ul class="card-list">
+                <li>Free idea consultation</li>
+				<li>7 Day turnaround (on average)</li>
+				<li>One time payment*</li>
+				<li>Perfect for landing pages, multi section sites, and tailored layouts</li>
+			</ul>
+		</div>
+		<div class="card">
+			<div class="card-header">Portfolio Site</div>
+			<h3>A sharp personal showcase crafted for employers and clients</h3>
+			<ul class="card-list">
+				<li>Free skills and positioning analysis</li>
+				<li>4 Day turnaround (on average)</li>
+				<li>One time payment*</li>
+				<li>Focused on visual clarity, personal branding, and credibility</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Ownership and Hosting Options -->
+<div class="section" id="ownership">
+    <h2>Ownership and Hosting Options</h2>
+    <div class="card-container" id="ownership-options">
+        <div class="card">
+            <div class="card-header">Default Hosting</div>
+			<p>Your project is hosted on Vercel with a format like your-website.vercel.app. Hosting access is not
+				included unless you choose a paid hosting plan.</p>
+		</div>
+		<div class="card">
+			<div class="card-header">Full Control Option</div>
+			<p>If you want complete ownership, we can publish through GitHub Pages and transfer the repository directly
+				to you. This gives you full access to the codebase and all future control over hosting.</p>
+		</div>
+	</div>
+</div>
+
+<!-- How the Build Process Works -->
+<div class="section" id="process">
+	<h2>How the Build Process Works</h2>
+	<ul>
+		<li>You agree to have a site created.</li>
+		<li>We confirm your specifications and produce a first iteration.</li>
+		<li>You request changes until the design matches your expectations.</li>
+		<li>Before payment, you will preview the site through video with a watermark.</li>
+		<li>Once you are satisfied and complete payment, you receive the live link along with full code ownership if
+			requested.
+		</li>
+	</ul>
+</div>
+
+<!-- What We Can Include -->
+<div class="section" id="inclusions">
+    <h2>What We Can Include</h2>
+    <div class="card-container" id="inclusions-cards">
+        <div class="card">
+            <div class="card-header">Card: Smart Integrations</div>
+            <ul class="card-list">
+                <li>Social media links</li>
+                <li>Live displays of your recent posts</li>
+				<li>Booking and scheduling features</li>
+				<li>Contact forms that send messages directly to your email</li>
+			</ul>
+		</div>
+		<div class="card">
+			<div class="card-header">Card: Project Scope</div>
+			<p>We specialise in streamlined sites and portfolios. Larger applications, database integrations, payment
+				systems, or advanced functionality may require additional pricing and a technical review.</p>
+		</div>
+	</div>
+</div>
+
+<!-- Pricing -->
+<div class="section" id="pricing">
+    <h2>Pricing</h2>
+    <div class="card-container" id="pricing-cards">
+        <div class="card">
+            <div class="card-header">Portfolio</div>
+            <ul class="card-list">
+                <li>£35 basic display</li>
+                <li>£50 standard package</li>
+				<li>Contact us for a tailored solution</li>
+			</ul>
+		</div>
+		<div class="card">
+			<div class="card-header">Website</div>
+			<ul class="card-list">
+				<li>£50 single landing page</li>
+				<li>£175 full site package</li>
+				<li>Contact us for a custom webapp package</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Page scripts -->
+<script src="./script.js" defer></script>
+</body>
+</html>
